@@ -1,0 +1,134 @@
+<link rel="stylesheet" type="text/css" href="HTMLCSS.css">
+ <div class="sidebar">
+
+        <ul class="sidebar-nav">
+            <li>
+                <a id="navbar-toggle">Close <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#">Home <i class="fa fa-home menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#page11">Schedule<i class="fa fa-calendar menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+<script>
+var state = "expanded";
+//Check if navbar is expanded or minimized and handle 
+$('#navbar-toggle').click(function() {
+    if (state == "expanded") {
+        $('.sidebar').css('margin-left', '-180px');
+        state = "minimized";
+    } else {
+        if (state == "minimized") {
+            $('.sidebar').css('margin-left', '0px');
+            state = "expanded";
+        }
+    }
+})
+</script>
+
+<h2 style="color:#a51c30; text-align: center;"  > JavaScript</h2>
+<br>
+
+<h3 style="color:#a51c30; margin-left:5em; margin-right:5em; " >Hello, World!</h3>
+		<p> When using JavaScript inside the browser, we can change how the page looks like and how it behaves. In this tutorial, we will only focus on learning the language itself,
+		and therefore we will only use one function to print out our results called "console.log".		
+		</p>
+		<br>
+		<p>console.log("Goodbye, World!");</p>
+<br>
+<br>
+<h3 style="color:#a51c30; margin-left:5em; margin-right:5em; " > Variable types</h3>
+		<p> JavaScript can hold an array of variables in an Array object. In JavaScript, an array also functions as a list, a stack or a queue.
+		<br>
+To define an array, either use the brackets notation or the Array object notation:</p>
+<div id="win" style="background-color: grey; margin-left:17%; margin-right:50%">
+var myNumber = 3;                   // a number <br>
+var myString = "Hello, World!"      // a string <br>
+var myBoolean = true;               // a boolean<br>
+</div>
+<br>
+<h3 style="color:#a51c30; margin-left:5em; margin-right:5em; " > Arrays</h3>
+		<p> Like almost every dynamic language, JavaScript is a "duck-typed" language, and therefore every variable is defined using the var keyword, and can contain all types of variables.
+		<br>
+We can define several types of variables to use in our code:</p>
+	<br>
+<div id="win" style="background-color: grey; margin-left:17%; margin-right:50%">
+var myArray = [1, 2, 3]; <br>
+var theSameArray = new Array(1, 2, 3);
+</div>
+<h4 style="color:#a51c30; margin-left:7em; margin-right:5em; " >Addressing</h4>
+<p>We can use the brackets [] operator to address a specific cell in our array. Addressing uses zero-based indices, so for example, in myArray the 2nd member can be addressed with index 1. One of the benefits of using
+ an array datastructure is that you have constant time look-up, if you already know the index of the element you are trying to access.</p>
+     
+	<br>
+	<div id="wrapper">
+  		<section id="generic-tabs">
+        <ul id="tabs">
+            <li>
+                <a title="Home" href="#first-tab"><i class="fa fa-code"></i>Exercise</a>	        
+            </li>
+            <li>
+                <a title="Photos" href="#second-tab"><i class="fa fa-eye"></i>View Code</a>	
+            </li>
+            <li>
+                <a title="About" href="#third-tab"><i class="fa fa-info-circle"></i>Result</a>	
+            </li>			    
+            <li>
+                <a title="Contact" href="#fourth-tab"><i class="fa fa-code"></i>Message</a>	    
+            </li>
+        </ul>
+        <div id="first-tab" class="tab-content">        
+          <h1 style="color:#a51c30;">Exercise</h1>
+          <p> A number called myNumber which contains the number 4; <br>
+			  A string called myString which contains the sentence Variables are great.; <br>
+			  A boolean called myBoolean which contains the value false;</p>
+        </div>
+
+        <div id="second-tab" class="tab-content">        
+          <h1>Coding</h1>
+          <img src="img/Javascript.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="third-tab" class="tab-content">        
+          <img src="img/javascript1.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="fourth-tab" class="tab-content">
+		<h5 style="color:#a51c30;"> Combining two lessons </h5>
+		<p>This exercise is intended for the user who want to know how to use the code he learned before.</p>
+          </div>
+
+		</section>	
+	</div>
+<script>
+(function($){
+	/* trigger when page is ready */
+	$(document).ready(function (){
+		
+        //Tabs functionality
+        //Firstly hide all content divs
+        $('#generic-tabs div').hide();
+        //Then show the first content div
+        $('#generic-tabs div:first').show();
+        //Add active class to the first tab link
+        $('#generic-tabs ul#tabs li:first').addClass('active');
+        //Functionality when a tab is clicked
+        $('#generic-tabs ul#tabs li a').click(function(){
+        	//Firstly remove the current active class
+            $('#generic-tabs ul#tabs li').removeClass('active');
+            //Apply active class to the parent(li) of the link tag
+            $(this).parent().addClass('active');
+            //Set currentTab to this link
+            var currentTab = $(this).attr('href');
+            //Hide away all tabs
+            $('#generic-tabs div').hide();            
+            //show the current tab
+            $(currentTab).show();
+            //Stop default link action from happening
+            return false;
+        });	
+	});
+})(window.jQuery);
+</script>
+<div class="clear"></div>

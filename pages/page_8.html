@@ -1,0 +1,200 @@
+<link rel="stylesheet" type="text/css" href="HTMLCSS.css">
+    <div class="sidebar">
+
+        <ul class="sidebar-nav">
+            <li>
+                <a id="navbar-toggle">Close <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="Home Page.html">Home <i class="fa fa-home menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+			<li>
+                <a href="#page9">Schedule<i class="fa fa-calendar menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+    </div>
+<script>
+var state = "expanded";
+//Check if navbar is expanded or minimized and handle 
+$('#navbar-toggle').click(function() {
+    if (state == "expanded") {
+        $('.sidebar').css('margin-left', '-180px');
+        state = "minimized";
+    } else {
+        if (state == "minimized") {
+            $('.sidebar').css('margin-left', '0px');
+            state = "expanded";
+        }
+    }
+})
+</script>
+<h3 style="color:#a51c30; text-align: center;"> Java</h3>
+<p>Java is a high-level programming language originally developed by Sun Microsystems and released in 1995. Java runs on a variety of platforms, such as Windows, Mac OS, and the various versions of UNIX. This tutorial gives a complete understanding of Java.
+This reference will take you through simple and practical approach while learning Java Programming language.</p>
+<br>
+<p>Java is Object Oriented Language.</p>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">Object - Objects have states and behaviours. Example: A dog has states - colour, name, breed as well as behaviours -wagging, barking, eating.
+ An object is an instance of a class.</li>
+ <br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">Class - A class can be defined as a template/ blue print that describes the behaviours/states that object of its type support.</li>
+ <br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">Methods - A method is basically a behaviour. A class can contain many methods. It is in methods where the logics are written, data is manipulated and all the actions are executed.</li>
+ <br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">Instance Variables - Each object has its unique set of instance variables. An object's state is created by the values assigned to these instance variables.</li>
+<br>
+
+<h4 style="color:#a51c30; margin-left:5em; margin-right:5em; ">Data Type</h4>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">byte:Byte data type is an 8-bit signed two's complement integer. &nbsp Its range is -128 to 127. </li>
+<br> 
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">short:Short data type is a 16-bit signed two's complement integer. &nbsp Its range is -32,768 to 32,768. </li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">int:Int data type is a 32-bit signed two's complement integer. &nbsp Its range is - 2,147,483,648 to  2,147,483,648. </li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">long:Long data type is a 64-bit signed two's complement integer. &nbsp Its range is -9,223,372,036,854,775,808 to  9,223,372,036,854,775,808. </li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">float:Float data type is a single-precision 32-bit IEEE 754 floating point. &nbsp Float is mainly used to save memory in large arrays of floating point numbers. </li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">double:double data type is a double-precision 64-bit IEEE 754 floating point. &nbsp This data type is generally used as the default data type for decimal values, generally the default choice </li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">boolean:boolean data type represents one bit of information. &nbsp There are only two possible values: true and false.</li>
+<br>
+<li style= "color:#1e1e1e; margin-left:5em; margin-right:5em;">char: char data type is a single 16-bit Unicode character. &nbsp Char data type is used to store any character..</li>
+<br>
+<p>Firstly call the folder you want to write the program. So, follow the instruction.
+<br>
+public class + your folder name. And write main method. </p>
+br>
+<h5 style="color:#a51c30; text-align: center;"> Main Method</h5>
+<p>public static void main(String args[]) - Java program processing starts from the main() method which is a mandatory part of every Java program.</p>
+<br>
+
+<div class="container-fluid">
+<div class="row pt-lg-4">
+<div class="col-lg-6" >
+<div class="single_grid_text">
+<p >public class J202CharLesson<br>
+{
+<br>
+public static void main(String[] args)<br>
+{
+<br>
+char ch = 'a';<br>
+System.out.print("The Character is: " + ch);<br>
+}<br>
+}
+ </div>
+</div>
+<div class="col-lg-6">
+<div class="single_grid_text">
+<p>In this program, "char" character is used to handle one character. For only one character, a is written in Single Quote. And then, print the a.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="wrapper">
+  		<section id="generic-tabs">
+        <ul id="tabs">
+            <li>
+                <a title="Home" href="#first-tab"><i class="fa fa-code"></i>Program</a>	        
+            </li>
+            <li>
+                <a title="Photos" href="#second-tab"><i class="fa fa-eye"></i>View Code</a>	
+            </li>
+            <li>
+                <a title="About" href="#third-tab"><i class="fa fa-info-circle"></i>Result</a>	
+            </li>			    
+            <li>
+                <a title="Contact" href="#fourth-tab"><i class="fa fa-code"></i> New Coding</a>	    
+            </li>
+        </ul>
+        <div id="first-tab" class="tab-content">        
+          <h1 style="color:#a51c30;">Program</h1>
+          <p> Write the program which can request the data from user. The data are name and age. And then, print them out. </p>
+        </div>
+
+        <div id="second-tab" class="tab-content">        
+          <h1>Coding</h1>
+          <img src="img/JavaCoding.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="third-tab" class="tab-content">        
+          <img src="img/JavaCoding1.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="fourth-tab" class="tab-content">
+		<p>Import java.util.Scanner; <br>
+int num;<br>
+String str;<br>
+Scanner input = new Scanner(System.in);<br><br>
+System.out.print(“Enter Number: “);<br>
+num = input.nextInt( );<br><br>
+System.out.print(“Enter String: “);<br>
+Str = input.nextLine( );<br>
+<table>
+  <tr>
+    <th>No</th>
+    <th>Method</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>nextDouble( )</td>
+    <td>Retrives input as a double</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>nextInt( )</td>
+    <td>Retrives input as an integer</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>nextLine( )</td>
+    <td>Retrives the next line of data and returns it as a string</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>nextFloat( )</td>
+    <td>Retrives input as a float</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>next( )</td>
+    <td>Retrives the next complete token as a string</td>
+  </tr>
+ 
+</table>
+          </div>
+
+		</section>	
+	</div>
+<script>
+(function($){
+	/* trigger when page is ready */
+	$(document).ready(function (){
+		
+        //Tabs functionality
+        //Firstly hide all content divs
+        $('#generic-tabs div').hide();
+        //Then show the first content div
+        $('#generic-tabs div:first').show();
+        //Add active class to the first tab link
+        $('#generic-tabs ul#tabs li:first').addClass('active');
+        //Functionality when a tab is clicked
+        $('#generic-tabs ul#tabs li a').click(function(){
+        	//Firstly remove the current active class
+            $('#generic-tabs ul#tabs li').removeClass('active');
+            //Apply active class to the parent(li) of the link tag
+            $(this).parent().addClass('active');
+            //Set currentTab to this link
+            var currentTab = $(this).attr('href');
+            //Hide away all tabs
+            $('#generic-tabs div').hide();            
+            //show the current tab
+            $(currentTab).show();
+            //Stop default link action from happening
+            return false;
+        });	
+	});
+})(window.jQuery);
+</script>
+<div class="clear"></div>

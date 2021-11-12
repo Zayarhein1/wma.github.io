@@ -1,0 +1,18 @@
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+   background: #f8f8f8;
+  color: #fff;
+    font-size: 17px;  
+	line-height: 200%;
+}
+
+#Teachphilo{
+  text-align: center; 
+}
+
+#goal{
+	margin-left:5em;
+}

@@ -1,0 +1,137 @@
+<link rel="stylesheet" type="text/css" href="HTMLCSS.css">
+  <div class="sidebar">
+
+        <ul class="sidebar-nav">
+            <li>
+                <a id="navbar-toggle">Close <i class="fa fa-bars menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#">Home <i class="fa fa-home menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#page7">Schedule<i class="fa fa-calendar menu-icon fa-2x" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+<script>
+var state = "expanded";
+//Check if navbar is expanded or minimized and handle 
+$('#navbar-toggle').click(function() {
+    if (state == "expanded") {
+        $('.sidebar').css('margin-left', '-180px');
+        state = "minimized";
+    } else {
+        if (state == "minimized") {
+            $('.sidebar').css('margin-left', '0px');
+            state = "expanded";
+        }
+    }
+})
+</script>
+
+<h2 style="color:#a51c30; text-align: center;"  > HTML & CSS</h2>
+		<p> HTML is the foundation behind all web pages. It’s used to add structure and form to text, images, and more. CSS is the language used to style HTML content. 
+		In this first course, you’ll learn the fundamentals of both languages so that you can create visually appealing web pages.		
+		</p>
+
+
+<br>
+<h3 style="color:#a51c30; margin-left:5em; margin-right:5em; " > Construction</h3>
+		<p> !DOCTYPE html — This tag specifies the language you will write on the page. In this case, the language is HTML 5. 
+		<br> So, start with !DOCTYPE html and then, follow heading tag. Before body tag, be sure to close heading tag. Between the p tags, you can add the content you want to give.
+		     And close html tag. </p>
+	<br>
+<p>Please take a look at this picture</p>
+     <img src="img/HTML-CSS.webp" class="img-fluid" style="height: 50%; width:50%; margin-left:5%; margin-right:5%; " alt="Responsive image">	
+<br>
+<br>
+     <h3 style="color:#a51c30;  margin-left:5em; margin-right:5em; " >Style</h3>
+ <br>
+      <p>There are three types of CSS. They are:
+ <li style="color:#1e1e1e;  margin-left:5em; margin-right:5em; " >Inline</li>
+ <li style="color:#1e1e1e;  margin-left:5em; margin-right:5em; " >Internal</li>
+ <li style="color:#1e1e1e;  margin-left:5em; margin-right:5em; " >External</li>
+      </p> 
+<br>
+    <h4 style="color:#a51c30; margin-left:3.5em;"> Inline</h4>
+       <p>Inline styles are plonked straight into the HTML tags using the style attribute.
+	   For Example, Using (style="color: red") to text. "Text" color wil be changed into the red. </p>
+	 
+	  <br>
+	 <h4 style="color:#a51c30; margin-left:3.5em;"> Internal</h4>
+	<p> Embedded, or internal, styles are used for the whole page. Inside the head element, the style tags surround all of the styles for the page.</p>
+	 <img src="img/Internal.jpg" class="img-fluid" style="height: 50%; width:50%; margin-left:15em margin-right:5%; " alt="Responsive image">	
+	<br>
+	<br>
+	<h4 style="color:#a51c30;margin-left:3.5em;"> External</h4>
+<p> External styles are used for the whole, multiple-page website. There is a separate CSS file, and is needed to be saved as “style.css” in the same directory as your HTML page then it can be linked to in the HTML like this:</p>
+	 <img src="img/external-css.png" class="img-fluid" style="height: 50%; width:50%; margin-left:5%; margin-right:5%; " alt="Responsive image">	
+	
+	
+	<br>
+	<div id="wrapper">
+  		<section id="generic-tabs">
+        <ul id="tabs">
+            <li>
+                <a title="Home" href="#first-tab"><i class="fa fa-code"></i>Website</a>	        
+            </li>
+            <li>
+                <a title="Photos" href="#second-tab"><i class="fa fa-eye"></i>View Code</a>	
+            </li>
+            <li>
+                <a title="About" href="#third-tab"><i class="fa fa-info-circle"></i>Result</a>	
+            </li>			    
+            <li>
+                <a title="Contact" href="#fourth-tab"><i class="fa fa-code"></i> New Coding</a>	    
+            </li>
+        </ul>
+        <div id="first-tab" class="tab-content">        
+          <h1 style="color:#a51c30;">Website</h1>
+          <p> Write the website which show about the  Covid-19. Highlight Covid-19 and provide with image.</p>
+        </div>
+
+        <div id="second-tab" class="tab-content">        
+          <h1>Coding</h1>
+          <img src="img/Covid1.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="third-tab" class="tab-content">        
+          <img src="img/Covid.png" alt="" class="img-fluid" width="100%" height="70%">
+		</div>
+        <div id="fourth-tab" class="tab-content">
+		<h5 style="color:#a51c30;"> Adding the image </h5>
+		<p>Using {img src= "your image name}"</p>
+          </div>
+
+		</section>	
+	</div>
+<script>
+(function($){
+	/* trigger when page is ready */
+	$(document).ready(function (){
+		
+        //Tabs functionality
+        //Firstly hide all content divs
+        $('#generic-tabs div').hide();
+        //Then show the first content div
+        $('#generic-tabs div:first').show();
+        //Add active class to the first tab link
+        $('#generic-tabs ul#tabs li:first').addClass('active');
+        //Functionality when a tab is clicked
+        $('#generic-tabs ul#tabs li a').click(function(){
+        	//Firstly remove the current active class
+            $('#generic-tabs ul#tabs li').removeClass('active');
+            //Apply active class to the parent(li) of the link tag
+            $(this).parent().addClass('active');
+            //Set currentTab to this link
+            var currentTab = $(this).attr('href');
+            //Hide away all tabs
+            $('#generic-tabs div').hide();            
+            //show the current tab
+            $(currentTab).show();
+            //Stop default link action from happening
+            return false;
+        });	
+	});
+})(window.jQuery);
+</script>
+<div class="clear"></div>

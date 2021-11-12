@@ -1,0 +1,125 @@
+
+ <link rel="stylesheet" type="text/css" href="register.css">
+<div class="login-html">  
+  <form  name='form' id="register"  style= "background-color: rgba(40,57,101,.9)">
+   <h3 style="color:#FFFFFF;" >Register</h3>
+    
+        <div id="row" style="color:	#FFA500">
+            <div class="col">Full Name</div>
+            <div class="col"><input type="text" id="fname" onkeypress="return checkaplha2(event,'error')" onblur="checkblank('fname','error')"></div>
+        
+        <div class="col" id="error" style="color:red"></div>
+		</div>    
+	
+	    <div id="row" style="color:#FFA500">
+            <div class="col">Your Email</div>
+			<!--If the user will not input Email, checkblank JS function is invoked.-->
+			<!--If the user will input Email with incorrect format, c+heckemail JS function is invoked.-->
+            <div class="col">
+               <input type="text" id="eid" onblur="checkblank('eid','error3')"></div>
+				
+          <div class="col" id="error3" style="color:red"></div>
+		</div>
+		
+		<div id="row" style="color:#FFA500">
+            <div class="col">Your Password</div>
+            <div class="col">
+			<!--If the user will not input Address, checkblank JS function is invoked.-->
+                <input type="password"  id="pass" onblur="checkblank('pass','error4')"></div>
+		        
+        <div class="col" id="error4" style="color:red"></div>
+		</div>
+	
+	<div id="row" style="color:#FFA500">
+            <div class="col">Create username</div>
+            <div class="col">
+			<!--If the user will not input Address, checkblank JS function is invoked.-->
+                <input type="text"  id="uname" onblur="checkblank('uname','error5')"></div>
+		        
+        <div class="col" id="error5" style="color:red"></div>
+		</div>
+    
+		
+		<div id="row" style="color:#FFA500">
+            <div class="col">Create new Password</div>
+            <div class="col">
+			<!--If the user will not input Address, checkblank JS function is invoked.-->
+                <input type="password"  id="pass3" onblur="checkblank('pass3','error7')"></div>
+		        
+        <div class="col" id="error7" style="color:red"></div>
+		</div>
+		<div align="center" class="myat">
+		    <input id="submit" type="button" value="submit">
+			<button type="reset">reset</button>
+			<button >cancel</button>
+		</div>
+	</form>
+	</div>
+	<script type="text/javascript">
+	
+	  function checkblank(fname, error) 
+        {
+			/*Declare x to variable name and
+			the user input "name" value is assigned to x variable*/
+            var x = document.getElementById(fname).value;
+			/*If the user will not input the data, this error message is displayed*/
+            if (x == "") {
+                document.getElementById(error).innerHTML = "Please input the required field";
+            } 
+			/*If the user will enter the data, no error message is shown.*/
+			else {
+                document.getElementById(error).innerHTML = "";
+            }
+        }
+		
+		
+		function checkaplha2(event,error)
+		{
+		if(!((event.which>=65 && event.which<=90) || (event.which>=97 && event.which<=122) || event.which==0 || event.which==8))
+		{
+		document.getElementById(error).innerHTML="Invalid Name Format!";
+		return false;
+		}
+		}
+		
+	</script>
+    <script>
+        $(document).ready(function(){
+            $("#submit").click(function(){
+                var name= $("#fname").val();
+                var email=$("#eid").val();
+                var password=$("#pass").val();
+				var username=$("#uname").val();
+				var password1=$("#pass3").val();
+				
+                var firstsign =email.indexOf("@");
+                var lastsign =email.lastIndexOf(".");
+                
+                var dataString = 'name1=' + name + '&email1=' + email  + '&password1=' + password + '&username=' + username + '&password2=' + password1;
+                 if(firstsign< 4||lastsign<firstsign +3)
+	            {
+		            $("#error3").html("You must fill @ sign and . sign in email address");
+	            }
+                else
+                {
+                    $.ajax({
+                    type:"POST",
+                    url:"register.php",
+                    data:dataString,
+                    cache:false,
+                    success: function (result) {
+                        $("#error").html(result);
+                    }
+                });7
+                window.location.replace('thankyou.html');
+            }
+            return false;
+        });
+        
+    });
+    </script>
+	
+<div class="clear"></div>
+	
+			
+
